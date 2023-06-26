@@ -45,14 +45,34 @@ generaSecuencia(numero2);
 //tabla de multiplicar
 
 function tablaMultiplicar(numero3) {
-  for (let y= 1; y <= 10; y++){
+  
+  let ol = document.getElementById("listar-tabla");
+  ol.innerHTML = "";
+  let cadena = numero3;
+  let palabrasOrdenadas = cadena.trim().split(" ");
+  palabrasOrdenadas.sort();
+
+  for (let y= 1; y <= 10 || y  <= palabrasOrdenadas; y++){
     let resultado=numero3 *y;
-    console.log(numero3 + `*` + y + `=`+ resultado);
-    }   
+    // console.log(numero3 + `*` + y + `=`+ resultado);
+    const li = document.createElement("li");
+    li.innerHTML = numero3 + `*` + y + `=`+ resultado;
+    ol.appendChild(li);
+
+  }
+   
 }
 
-let numero3 = prompt("ingresar numero");
-tablaMultiplicar(numero3);
+// let numero3 = prompt("ingresar numero");
+let numero3 = document.getElementById("tabla").value;
+//tablaMultiplicar(numero3);
+
+
+function Tablas() {
+  let numero3 = document.getElementById("tabla").value;
+  tablaMultiplicar(numero3)
+    
+}
 
 //numeros primos
 
@@ -69,11 +89,18 @@ function esPrimo(numero4) {
     }
   
     return true;
+ 
   }
   
   //Ejemplo de uso
   console.log(esPrimo(7)); 
-  console.log(esPrimo(10)); 
+  console.log(esPrimo(10));
+  
+
+
+
+
+
   
   //numeros perfectos
 
@@ -124,33 +151,32 @@ function esPrimo(numero4) {
     }
    }
    console.log(factorialRecursivo(5));
-/*
+
    //ordenar palbras
 
-   function ordenarPalabras() {
-    let ol = document.getElementById("lista-palabras");
+  function ordenarPalabras() {
+    
+    let ol = document.getElementById("listar-palabras");
     ol.innerHTML = "";
     let cadena = document.getElementById("text1").value;
     let palabrasOrdenadas = cadena.trim().split(" ");
     palabrasOrdenadas.sort();
-    for (let i = 0; i < palabrasOrdenadas.length; i++) {
-        const li = document.createElement("li");
-        li.innerHTML = palabrasOrdenadas[i];
-        ol.appendChild(li);
-    }
+
+      for (let i = 0; i < palabrasOrdenadas.length; i++) {
+          const li = document.createElement("li");
+          li.innerHTML = palabrasOrdenadas[i];
+          ol.appendChild(li);
+      }
+
     document.getElementById("text1").select();
-}
+  }
 
 function reset() {
+
     document.getElementById("text1").value = "";
     document.getElementById("text1").focus();
-    document.getElementById("lista-palabras").innerHTML = "";
+    document.getElementById("listar-palabras").innerHTML = "";
 }
-
-//esta comentado todo este ejercicico,porque al momento de ordenar no funciona.no toma el elemento (li.innerHTML)a la palabra ordenada (I)
-
-*/
-   
 
 
 //contar letras

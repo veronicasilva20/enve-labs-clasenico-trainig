@@ -8,23 +8,45 @@
   </head>
   <body>
     <h1>Clase de Nico</h1>
-    <p>Ordena palabras usando javascript</p>
+    
+    <hr>
+    <h2>Ordena palabras usando javascript</p>
     <div id="display-palbras" style="border:1px solid gray;">
        <p style="padding-left: 10px;"> Aqui se listaran las palabras ordenadas</p><hr />
-        <ol id="listar-palbras"></ol>
-
-    
+        <ol id="listar-palabras"></ol>
+  
     </div>
     <br/>
-
-    <input type="text" name="" id="text1">
-    <button onclick="OrdenarPalabras()">Ordenar</button>
-    <button onclick="reset()">Reset</button>
-
-
-
-    </body>
     
-  <script src="main.js"></script>
+    <input type="text" name="" id="text1">
+    <button onclick="ordenarPalabras()">Ordenar</button>
+    <button onclick="reset()">Reset</button>
+    <hr>
+
+
+
+
+
+    <h2>Mostrar Tablas En Pantalla</p>
+    <div id="display-palbras" style="border:1px solid gray;">
+      <p style="padding-left: 10px;"> Aqui se listaran la tabla de multiplicar</p><hr />
+       <ol id="listar-tabla" style="padding-left: 60px;"></ol>
+ 
+   </div>
+   <br/>
+    <label for="">Ingresar numero hasta el 10 para ver la tabla</label><br/>
+    <input type="text" name="" id="tabla">
+    <button onclick="Tablas()">Mostrar tabla de el numero puesto en el input</button>
+    <hr>
+
+
+
+
+
+
+
+    <script src="main.js"></script>
+  </body>
+    
 
 </html>
